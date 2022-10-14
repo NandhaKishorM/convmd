@@ -21,6 +21,13 @@ When user select and click on analyze button with toggle switch on the image upl
 ```
 ./lambdafunctions/Chestxray.py
 ```
+
+The Flask Sever App
+
+```
+./ec2app/application.py
+```
+
 It will return 18 classes
 
 Atelectasis
