@@ -9,7 +9,7 @@ The app is available as **apk** file inside the apk folder.
 # Architecture
 ![Alt text](./architecture/architecture.png)
 
-# Usage Of AWS Comprehend and other AWS Services 
+# Usage Of AWS Comprehend Medical And Other AWS Services 
 ## Document Analysis
 When user upload an image without switch toggle for chest x-ray detection the image gets uploaded to AWS S3 using cognito pool id in kotlin, with the filename as firebase uid. Then a lambda function will be triggered using API Gateway using the image filename and the image passed through AWS Textract and the returned text string passed to AWS Comprehend with indents are returned as response for the mobile application.
 ```
