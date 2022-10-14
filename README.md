@@ -6,6 +6,41 @@ Social medias like instagram, facebook and whatsapp has become our day to day li
 **ConvMed** is a social media mobile application built on **kotlin** for hospitals to analyze Electronic Health Records, medical tests, Chest X-Rays, etc powered by AWS Comprehend, AWS Lambda and AWS EC2. The analysed results are stored as comments in the post and  can be accessed by doctors, lab assistants any other healthcare workers within the hospitals protecting the privacy.
 # Architecture
 ![Alt text](./architecture/architecture.png)
+
+# Usage Of AWS Comprehend and other AWS Services 
+## Document Analysis
+When user upload an image without switch toggle for chest x-ray detection the image gets uploaded to AWS S3 using cognito pool id in kotlin, with the filename as firebase uid. Then a lambda function will be triggered using API Gateway using the image filename and the image passed through AWS Textract and the returned text string passed to AWS Comprehend with indents are returned as response for the mobile application.
+```
+./lambdafunctions/comprehendfunc.py
+```
+## Chest X-Ray
+We deployed flask application on AWS EC2 instance using Gunicorn and nginx with **torchxrayvision** library support. **TorchXRayVision** is an open source software library for working with chest X-ray datasets and deep learning models. It provides a common interface and common pre-processing chain for a wide set of publicly available chest X-ray datasets including famous datasets such as MIMIC-CXR (MIT) and NIH chest X-ray8. In addition, a number of classification and representation learning models with different architectures, trained on different data combinations, are available through the library to serve as baselines or feature extractors.
+When user select and click on analyze button with toggle switch on the image uploaded to aws s3 using cognito pool id in kotlin, with the filename as firebase uid. Then a lambda function will be triggered using API Gateway with AWS EC2 instance url(flask app) along with parameter.
+```
+./lambdafunctions/Chestxray.py
+```
+It will return 18 classes
+
+Atelectasis
+Cardiomegaly
+Consolidation 
+Edema 
+Effusion
+Emphysema 
+Enlarged_Cardiomediastinum 
+Fibrosis
+Fracture
+Hernia=
+Infiltration 
+Lung_Lesion 
+Lung_Opacity 
+Mass 
+Nodule 
+Pleural_Thickening 
+Pneumonia 
+Pneumothorax 
+
+
  # Screenshots
  ||||
 |:----------------------------------------:|:-----------------------------------------:|:-----------------------------------------: |
