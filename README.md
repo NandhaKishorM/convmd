@@ -65,7 +65,7 @@ Pneumothorax
 - [Backend](https://firebase.google.com) - Google Firebase
   - Firebase Auth - To support email based authentication
   - AWS DynamoDB - A NoSQL database to store all data 
-  - AWS S3 - A clous storage to store all images
+  - AWS S3 - A cloud storage to store all images
   - AWS Comprehend - A cloud service to analyse medical text
   - AWS Textract - Document to text OCR cloud service
   - AWS EC2- Cloud based virtual computers
