@@ -5,7 +5,7 @@ Social medias like instagram, facebook and whatsapp has become our day to day li
 # What it does
 **ConvMed** is a social media mobile application built on **kotlin** for hospitals to analyze Electronic Health Records, medical tests, Chest X-Rays, etc powered by AWS Comprehend, AWS Lambda and AWS EC2. The analysed results are stored as comments in the post and  can be accessed by doctors, lab assistants any other healthcare workers within the hospitals protecting the privacy.
 # App 
-The app is available as **apk** inside apk folder.
+The app is available as **apk** file inside the apk folder.
 # Architecture
 ![Alt text](./architecture/architecture.png)
 
